@@ -27,7 +27,8 @@ which returns a tuple (start, end) representing the start and end indices of the
 of False values in L. If there is a tie, then return the first such run. For example, if L is:
 False False True False False False False True True False False
 0 1 2 3 4 5 6 7 8 9 10
-Then the function would return (3, 6), since the longest run of False is from 3 to 6.4. Write a function occupy(n), which shows how birds are going to occupy n nests, assuming
+Then the function would return (3, 6), since the longest run of False is from 3 to 6.4.
+4. Write a function occupy(n), which shows how birds are going to occupy n nests, assuming
 that each new bird will choose the nest in the middle of the largest unoccupied run of nests.
 You could use as a helper function longestFalse(L) from the previous question. For example,
 if there were 10 nests, occupy(10) would print out the following sequence, where
