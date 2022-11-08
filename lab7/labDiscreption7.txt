@@ -1,0 +1,48 @@
+CPS109 Lab 7
+This lab (like lab6) gives you more practice using lists and tuples. There are five programs for
+you to write. (These are mostly exercises from Cay Horstmann's text Big Java, that you probably
+will be using in CPS209). Put all of your programs and outputs into a document lab7.txt and
+submit your single file on D2L
+1. A run is a sequence of adjacent repeated values. Write a program that generates a
+sequence of 20 random die tosses and then prints the die values, marking the runs by
+including them in parentheses, like this: 1 2 (5 5) 3 1 2 4 3 (2 2 2 2) 3 6 (5 5) 6 3 1
+Use the following pseudocode:
+Set a boolean variable inRun to false.
+For each valid index i in the list
+if inRun
+If values[i] is different from the preceding value
+Print )
+inRun = false
+if values[i] is the same as the following value and not inRun
+print (
+inRun = true
+Print values[i]
+If inRun, print )
+Recall from lab6, that random.randrange(0, 50) would give a random value from 0 to 49,
+inclusive. Die values are, of course, from 1 to 6, inclusive.
+2. Write a program that generates a sequence of 20 random die tosses and that prints the die
+values, marking only the longest run, like this: 1 2 5 5 3 3 2 4 3 (2 2 2 2) 3 6 5 5 6 3 1
+3. Assume that L is a list of Boolean values, True and False. Write a function longestFalse(L)
+which returns a tuple (start, end) representing the start and end indices of the longest run
+of False values in L. If there is a tie, then return the first such run. For example, if L is:
+False False True False False False False True True False False
+0 1 2 3 4 5 6 7 8 9 10
+Then the function would return (3, 6), since the longest run of False is from 3 to 6.4.
+4. Write a function occupy(n), which shows how birds are going to occupy n nests, assuming
+that each new bird will choose the nest in the middle of the largest unoccupied run of nests.
+You could use as a helper function longestFalse(L) from the previous question. For example,
+if there were 10 nests, occupy(10) would print out the following sequence, where
+underscore indicates an unoccupied nest, and X indicates an occupied nest. The first line of
+the printout is just 10 underscores showing that all the nests are unoccupied. The second
+line shows that a bird came to nest in position 5, since that is one the first middle positions
+of the unoccupied run from 0 to 9. In the third line a bird came to occupy the middle
+position for the longest open run of nests, from 0 to index 4.
+_ _ _ _ _ _ _ _ _ _
+_ _ _ _ _ X _ _ _ _
+_ _ X _ _ X _ _ _ _
+_ _ X _ _ X _ _ X _
+and so on, until
+X X X X X X X X X X
+5. Write a function isPal(L), where L is a list of integers, and the function returns True if the list
+is a palindrome, False otherwise. For example [5, 2, 9, 9, 2 5] is a palindrome. Use the
+reverse() method of list and check if the reversed list is the same as the original list.
