@@ -74,12 +74,17 @@ def longestFalse(L):
                 longestFalse = abs(i[0]-i[1])
                 holder = i
     print(holder)
+def birdNest():
+    listNest = ['-' for _ in range(10)]
+    for i in range(len(listNest)):
+        print(listNest, end='')
         
                  
 
 if __name__ == '__main__':
     # random_die()
     # seqgen()
-    longestFalse([True, True, False, False, True, False, True, True, False, False, True, True])
+    # longestFalse([True, True, False, False, True, False, True, True, False, False, True, True])
+    birdNest()
     
     
