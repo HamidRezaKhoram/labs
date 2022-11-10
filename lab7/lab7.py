@@ -40,7 +40,6 @@ def random_die():
 def seqgen():
     list_dies = [str(random.randrange(1,7)) for i in range(20)]
     list_dies = ''.join(list_dies)
-    print(list_dies)
     die_holder = []
     die_holder.append(list_dies[0])
     counte_die = 0
@@ -56,9 +55,10 @@ def seqgen():
     for i in die_holder:
         if len(i) >= len(longest):
             longest = i
-    print(longest) 
+ 
+    print(list_dies.replace(longest, ' ( '+longest+' ) ')) 
         
-    print(die_holder)
+    
 
 def longestFalse(L):
     
@@ -112,14 +112,14 @@ def birdNest(n):
     
 
 def isPal(L):
-    listL = L
+    listL = L[:]
     listL.reverse()
-    print(listL)
-    return listL == L[::-1]
+    print(L)
+    return listL == L
     print(l_s_r)
 if __name__ == '__main__':
-    random_die()
-    # seqgen()
+    # random_die()
+    seqgen()
     # longestFalse([True, True, False, False, True, False, True, True, False, False, True, True])
     # birdNest(4)
     # print(isPal([5, 1, 9, 9, 1, 5]))
