@@ -53,10 +53,12 @@ def seqgen():
             die_holder.append(list_dies[i+1])
             
     for i in die_holder:
-        if len(i) >= len(longest):
+        if len(i) > len(longest):
             longest = i
- 
-    print(list_dies.replace(longest, ' ( '+longest+' ) ')) 
+    if len(longest) == 1:
+        print(list_dies)
+    else:
+        print(list_dies.replace(longest, '('+longest+')',1)) 
         
     
 
@@ -86,8 +88,9 @@ def longestFalse(L):
             if abs(i[0]-i[1]) >= longestFalse and abs(i[0]-i[1]) != longestFalse:
                 longestFalse = abs(i[0]-i[1])
                 holder = i
+    # print(holder)
     return holder
-    print(holder)
+    
 import math
 def birdNest(n):
     listNest = ['-' for _ in range(n)]
@@ -120,8 +123,8 @@ def isPal(L):
 if __name__ == '__main__':
     # random_die()
     seqgen()
-    # longestFalse([True, True, False, False, True, False, True, True, False, False, True, True])
-    # birdNest(4)
+    # longestFalse([True,True,True,True,False])
+    # birdNest(8)
     # print(isPal([5, 1, 9, 9, 1, 5]))
     
     
