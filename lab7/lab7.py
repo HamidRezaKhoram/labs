@@ -1,17 +1,19 @@
-# Hamidreza KHoramrokh
+# Hamidreza Khoramrokh
 # 501146941
 # lab7
-
+# importing libraries for random number generation and ceiling
 import random
 import math
+
+# turning the given sudo code into python syntax
 def random_die():
     inRun = False
+    # list comprehension 
     list_dies = [random.randrange(1,7) for _ in range(20)]
-    
-    print(list_dies)
-    
-    for i in range(20):
 
+    # for loop iteration
+    for i in range(20):
+        # if we are in range of list index:
         if i <= 18:
             if list_dies[i] == list_dies[i+1] and inRun == False:
                 print('(', end=' ')
@@ -21,7 +23,9 @@ def random_die():
                 if list_dies[i] != list_dies[i+1]:
                     print(')', end=' ')
                     inRun = False
+        # if not in the range of correct index:
         else:
+            # checking only for the last two indexes
             if list_dies[18] == list_dies[19] and inRun == False:
                 print('(', end=' ')
                 inRun = True
@@ -37,14 +41,22 @@ def random_die():
         print(')', end='')
              
     print('')
+    
+# finding the longest running segment
 def seqgen():
+    # list comprehension
     list_dies = [str(random.randrange(1,7)) for i in range(20)]
+    # using join to turn list into string
     list_dies = ''.join(list_dies)
-    print(list_dies)
+    # our temp holder
     die_holder = []
+    # giving a our temp list its first value
     die_holder.append(list_dies[0])
+    # counter for our temp holder
     counte_die = 0
+    # saving the longest one
     longest = ''
+    # 
     for i in range(19):
         if list_dies[i] == list_dies[i+1]:
             die_holder[counte_die] = die_holder[counte_die] + list_dies[i+1]
@@ -54,11 +66,14 @@ def seqgen():
             die_holder.append(list_dies[i+1])
             
     for i in die_holder:
-        if len(i) >= len(longest):
+        if len(i) > len(longest):
             longest = i
-    print(longest) 
+    if len(longest) == 1:
+        print(list_dies)
+    else:
+        print(list_dies.replace(longest, '('+longest+')',1)) 
         
-    print(die_holder)
+    
 
 def longestFalse(L):
     
@@ -86,8 +101,9 @@ def longestFalse(L):
             if abs(i[0]-i[1]) >= longestFalse and abs(i[0]-i[1]) != longestFalse:
                 longestFalse = abs(i[0]-i[1])
                 holder = i
+    
     return holder
-    print(holder)
+    
 import math
 def birdNest(n):
     listNest = ['-' for _ in range(n)]
@@ -112,16 +128,15 @@ def birdNest(n):
     
 
 def isPal(L):
-    listL = L
+    listL = L[:]
     listL.reverse()
-    print(listL)
-    return listL == L[::-1]
-    print(l_s_r)
+    return listL == L
+    
 if __name__ == '__main__':
     random_die()
-    # seqgen()
-    # longestFalse([True, True, False, False, True, False, True, True, False, False, True, True])
-    # birdNest(4)
-    # print(isPal([5, 1, 9, 9, 1, 5]))
+    seqgen()
+    print(longestFalse([True,True,True,True,False]))
+    birdNest(4)
+    print(isPal([5, 1, 9, 9, 1, 5]))
     
     
