@@ -1,8 +1,5 @@
 def add(a, b):
     if b == 1:
-<<<<<<< HEAD
-        return a + b
-=======
         return a+1
     else:
         return add(a+1, b-1)
@@ -71,4 +68,3 @@ if __name__ == "__main__":
     print(counter_for_q5)
     print(findSeq())
     print(gcContent())
->>>>>>> 98da711a608ef2e42ff8df206c5a0fd661f0b150
