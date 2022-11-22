@@ -68,4 +68,4 @@ if __name__ == "__main__":
     print(counter_for_q5)
     print(findSeq())
     print(gcContent())
->>>>>>> 98da711a608ef2e42ff8df206c5a0fd661f0b150
+
