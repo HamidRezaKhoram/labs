@@ -1,8 +1,5 @@
 def add(a, b):
     if b == 1:
-<<<<<<< HEAD
-        return a + b
-=======
         return a+1
     else:
         return add(a+1, b-1)
