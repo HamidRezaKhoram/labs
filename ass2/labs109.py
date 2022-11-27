@@ -149,56 +149,7 @@ def is_ascending(items):
             return False
     return True
 
-def count_dominators(items):
-    if type(items) == range:
-        items = [*items]
 
-    # print(items)
-    # print(items)def riffle(items, out=True):
-    if len(set(items)) == 0 or len(set(items)) == 1:
-        # print(len(set(items)))
-        return len(items)
-    howMany = 0
-    length = len(items)
-    counter = 0
-    isBig = True
-    dictionaryN = {}
-    counter2 = 0
-    i = 0
-    while True:
-
-        # print(items[i])
-        # dictionaryN[items[counter]] = 0
-        if items[counter] < items[i]:
-            # print(items[counter])
-            # dictionaryN[items[counter]] += 1
-            counter += 1
-        i += 1
-        if i == len(items):
-            # print(items[counter])
-            howMany+=1
-            
-            # print(i)
-            
-            
-            counter+=1
-            i = counter+1
-
-
-            # print(i)
-        if i > len(items):
-            break
-        if items[counter] == items[-1]:
-            break
-        # print(items[counter])
-    # print(dictionaryN)
-            
-        # print(items[counter:len(items)])
-        # length = len(items[counter:len(items)])
-        
-
-    # print(howMany)
-    return howMany
 
 def riffle(items, out=True):
     if len(items) == 0:
@@ -211,7 +162,7 @@ def riffle(items, out=True):
     length = int((len(newList)/2))
     newList1 = newList[:length]
     newList2 = newList[length:]
-    print(newList1, newList2)
+
     newList3 = []
     for i in range(length):
         newList3.append(newList2[i])
@@ -223,31 +174,18 @@ def riffle(items, out=True):
         
 
 
-        
-    
-    
+
+def three_summers(items, goal):
+    for i in range(0, len(items)-2):
+        left = i+1; right = len(items)-1
+        while(left<right):
+            if(items[i]+items[left]+items[right]==goal):
+                return True
+            elif(items[i]+items[left]+items[right]<goal):
+                left+=1
+            else:
+                right-=1
+    return False
     
     
 
-# if __name__ == "__main__":
-# frequency_sort([4, 6, 2, 2, 6, 4, 4, 4]) # works
-# print(only_odd_digits(999999)) # works
-# print(colour_trio('yrbbbbryyrybb')) # works
-# print(taxi_zum_zum('LFFLF'))
-# print(taxi_zum_zum('LLFLFLRLFR')) # works
-# print(taxi_zum_zum('FFLLLFRLFLRFRLRRL'))
-# print(taxi_zum_zum('FR' * 1729))
-# print(is_cyclops(99099))
-# print(domino_cycle([(3, 5), (5, 2), (2, 3)])) # works
-# give_change(64, [50, 25, 10, 5, 1])
-# give_change(123, [100, 25, 10, 5, 1])
-# give_change(100, [42, 17, 11, 6, 1])
-#    print(is_ascending([1, 1, 1, 1]))
-# print(three_summers([10, 11, 16, 18, 19,99], 127))
-# count_dominators([42, 42, 42, 42])
-# count_dominators([42, 7, 12, 9, 2, 5])
-# count_dominators([3,2])
-count_dominators(range(10**7, 0, -1))
-# count_dominators(range(10**7))
-# count_dominators([])
-# count_dominators([42, 7, 12, 9, 13, 5])
